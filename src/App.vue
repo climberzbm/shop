@@ -1,10 +1,24 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
-  <router-view/>
+<div></div>
+<Home></Home>
 </template>
+
+<script>
+import { defineComponent } from 'vue'
+import Home from "views/home/Home.vue";
+
+export default defineComponent({
+
+  components: {
+    Home
+  },
+
+  setup() {
+
+  },
+})
+</script>
+
 
 <style lang="scss">
 @import 'assets/css/base.css'
