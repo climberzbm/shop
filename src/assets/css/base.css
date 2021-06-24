@@ -1,0 +1,132 @@
+@import './normalize.css';
+
+:root {
+  --color-text: #666;
+  --color-high-text: #42bbaa;
+  --color-tint: #42b983;
+  --color-background: #ffffff;
+  --font-size: 14px;
+  --line-height: 1.5;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  user-select: none;
+  background: var(--color-background);
+  color: var(--color-text);
+  width: 100vw;
+}
+
+a{
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.flex-X{
+  display: flex;
+}
+
+.flex-Y{
+  display: flex;
+  flex-direction: column;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.justify-content-start {
+  justify-content: flex-start;
+}
+
+.justify-content-end {
+  justify-content: flex-end;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
+.justify-content-around {
+  justify-content: space-around;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.align-items-start {
+  align-items: flex-start;
+}
+
+.align-items-end {
+  align-items: flex-end;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.flex-1-0-0 {
+  flex: 1 0 0;
+}
+
+.relative {
+  position: relative;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.text-center {
+  text-align: center;
+}
+
+
+.text-start {
+  text-align: start;
+}
+
+.text-end {
+  text-align: end;
+}
+
+
+.wrap-text {
+  white-space: normal;
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+.wrap-text-2 {
+  word-break: break-all;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.text-overflow-hidden {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.hidden {
+  overflow: hidden
+}
+
+.margin-0-auto {
+  margin: 0 auto;
+}
+
