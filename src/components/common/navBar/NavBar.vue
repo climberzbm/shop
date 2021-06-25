@@ -1,6 +1,6 @@
 <template>
   <div class="nav_bar">
-    <div class="left nav_bar_item">
+    <div class="left nav_bar_item" @click="goBack">
       <slot name="left"></slot>
     </div>
     <div class="center nav_bar_item">
@@ -14,12 +14,25 @@
 </template>
 
 <script>
+  import {
+    useRouter
+  } from 'vue-router'
+
   export default ({
     components: {
 
     },
 
     setup() {
+      const router = useRouter()
+
+      const goBack = () => {
+        router.go(-1)
+      }
+
+      return {
+        goBack
+      }
 
     },
   })
@@ -39,20 +52,28 @@
     display: flex;
   }
 
-  .nav_bar .nav_bar_item {
+  .nav_bar .left,
+  .nav_bar .right {
+    width: 40px;
+  }
+
+  .nav_bar .center {
     flex: 1;
+  }
+
+  .nav_bar .nav_bar_item {
     display: flex;
     justify-content: center;
     align-items: center;
   }
 
-  .nav_bar .center{
+  .nav_bar .center {
     font-size: 18px;
     font-weight: bold;
     color: #f3f3f3;
   }
 
-  .placeholder{
+  .placeholder {
     height: 40px;
   }
 </style>

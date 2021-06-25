@@ -1,18 +1,21 @@
 <template>
   <div class="recommend flex-X">
     <template v-for="item in recommendsData.slice(0, 4)" :key="item.id">
-      <router-link class="recommend_item" to="/">
+      <div class="recommend_item" @click="goProductDetail(item.id)">
         <div class="img_box">
-          <img
-            :src="item.cover_url">
+          <img :src="item.cover_url">
         </div>
         <span class="title">{{item.title}}</span>
-      </router-link>
+      </div>
     </template>
   </div>
 </template>
 
 <script>
+  import {
+    useRouter
+  } from "vue-router";
+
   export default ({
     components: {
 
@@ -28,6 +31,19 @@
     },
 
     setup() {
+      const router = useRouter()
+      const goProductDetail = id => {
+        router.push({
+          path: '/productDetail',
+          query: {
+            id
+          }
+        })
+      }
+
+      return {
+        goProductDetail
+      }
     },
   })
 </script>

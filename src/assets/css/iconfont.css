@@ -1,9 +1,9 @@
 @font-face {
   font-family: "iconfont";
   /* Project id 2632232 */
-  src: url('//at.alicdn.com/t/font_2632232_tnj23c32bdo.woff2?t=1624546459153') format('woff2'),
-    url('//at.alicdn.com/t/font_2632232_tnj23c32bdo.woff?t=1624546459153') format('woff'),
-    url('//at.alicdn.com/t/font_2632232_tnj23c32bdo.ttf?t=1624546459153') format('truetype');
+  src: url('//at.alicdn.com/t/font_2632232_im16we2e9e.woff2?t=1624608990324') format('woff2'),
+    url('//at.alicdn.com/t/font_2632232_im16we2e9e.woff?t=1624608990324') format('woff'),
+    url('//at.alicdn.com/t/font_2632232_im16we2e9e.ttf?t=1624608990324') format('truetype');
 }
 
 .iconfont {
@@ -12,6 +12,10 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-left:before {
+  content: "\e6e5";
 }
 
 .icon-gouwucheman:before {

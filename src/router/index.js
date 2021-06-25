@@ -41,6 +41,14 @@ const routes = [
     meta: {
       title: '个人中心'
     }
+  },
+  {
+    path: '/productDetail',
+    name: 'ProductDetail',
+    component: () => import('views/product/ProductDetail.vue'),
+    meta: {
+      title: '个人中心'
+    }
   }
 ]
 
