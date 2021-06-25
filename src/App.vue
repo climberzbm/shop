@@ -1,26 +1,24 @@
 <template>
-<div></div>
-<Home></Home>
+  <router-view></router-view>
 </template>
 
 <script>
-import { defineComponent } from 'vue'
-import Home from "views/home/Home.vue";
+  import {
+    defineComponent
+  } from 'vue'
 
-export default defineComponent({
+  export default defineComponent({
 
-  components: {
-    Home
-  },
+    components: {
 
-  setup() {
+    },
 
-  },
-})
+    setup() {
+
+    },
+  })
 </script>
 
-
 <style lang="scss">
-@import 'assets/css/base.css'
-
+  @import 'assets/css/base.css'
 </style>
