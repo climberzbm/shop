@@ -7,6 +7,7 @@
   </div>
   <recommends :recommendsData="recommendsData"></recommends>
   <div class="separator"></div>
+  <tab-control :tabList="tabList"></tab-control>
   <tab-bar></tab-bar>
 </template>
 
@@ -21,16 +22,19 @@
   import TabBar from '@/components/common/tabBar/TabBar.vue';
   import NavBar from "@/components/common/navBar/NavBar.vue";
   import Recommends from "./childComps/Recommends.vue";
+  import TabControl from '@/components/common/tabControl/TabControl.vue'
 
   export default {
     components: {
       TabBar,
       NavBar,
-      Recommends
+      Recommends,
+      TabControl
     },
 
     setup() {
       const recommendsData = ref([])
+      const tabList = ref(['畅销', '新书', '精选'])
 
       onMounted(() => {
         homeAllData().then(res => {
@@ -40,7 +44,8 @@
       })
 
       return {
-        recommendsData
+        recommendsData,
+        tabList
       }
     }
   }

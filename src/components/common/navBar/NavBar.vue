@@ -46,7 +46,7 @@
     right: 0;
 
     height: 40px;
-    background-color: var(--color-high-text);
+    background-color: var(--color-tint);
     color: var(--color-text);
 
     display: flex;
