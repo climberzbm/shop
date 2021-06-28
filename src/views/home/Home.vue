@@ -7,7 +7,8 @@
   </div>
   <recommends :recommendsData="recommendsData"></recommends>
   <div class="separator"></div>
-  <tab-control :tabList="tabList"></tab-control>
+  <tab-control :tabList="tabList" @handleClickItem="handleClickItem"></tab-control>
+  <goods-list :goodsData="goodsData"></goods-list>
   <tab-bar></tab-bar>
 </template>
 
@@ -17,35 +18,50 @@
     ref
   } from "vue";
   import {
-    homeAllData
+    getHomeAllData,
+    getHomeGoods
   } from '../../network/home'
   import TabBar from '@/components/common/tabBar/TabBar.vue';
   import NavBar from "@/components/common/navBar/NavBar.vue";
   import Recommends from "./childComps/Recommends.vue";
   import TabControl from '@/components/common/tabControl/TabControl.vue'
+  import GoodsList from '@/components/content/goods/GoodsList.vue'
 
   export default {
     components: {
       TabBar,
       NavBar,
       Recommends,
-      TabControl
+      TabControl,
+      GoodsList
     },
 
     setup() {
       const recommendsData = ref([])
+      const goodsData = ref([])
       const tabList = ref(['畅销', '新书', '精选'])
 
+      const handleClickItem = e => {
+        console.log(e);
+      }
+
       onMounted(() => {
-        homeAllData().then(res => {
+        getHomeAllData().then(res => {
           console.log(res);
           recommendsData.value = res.goods.data
+          goodsData.value = res.goods.data
+        })
+
+        getHomeGoods().then(res => {
+          console.log(res);
         })
       })
 
       return {
         recommendsData,
-        tabList
+        tabList,
+        handleClickItem,
+        goodsData
       }
     }
   }

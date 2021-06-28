@@ -1,9 +1,9 @@
 <template>
   <div class="tab_control">
     <template v-for="(item, index) in tabList" :key="index">
-      <div class="tab_item" @click="handleClick(index)">
-        {{item}}{{index}}{{currentIndex}}
-        <div v-if="isShow(index)"></div>
+      <div class="tab_item" @click="handleClickItem(index)">
+        {{item}}
+        <div v-show="currentIndex == index" class="bottom_line"></div>
       </div>
     </template>
   </div>
@@ -29,22 +29,17 @@
       }
     },
 
-    setup() {
+    setup(props, {emit}) {
       let currentIndex = ref(0)
 
-      const handleClick = index => {
+      const handleClickItem = index => {
         currentIndex.value = index
+        emit('handleClickItem', index)
       }
 
-      const isShow = ((index) => {
-        console.log(index);
-        return currentIndex.value == index
-      })
-
       return {
-        handleClick,
-        currentIndex,
-        isShow
+        handleClickItem,
+        currentIndex
       }
     }
   })
@@ -54,8 +49,12 @@
   .tab_control {
     width: 100%;
     height: 40px;
+    background: #fff;
 
     display: flex;
+
+    position: sticky;
+    top: 40px;
   }
 
   .tab_control .tab_item {
