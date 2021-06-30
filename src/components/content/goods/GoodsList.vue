@@ -1,22 +1,22 @@
 <template>
   <div class="goods_list">
-    <!-- <template v-for="item in goodsData" : key="item.id">
+    <template v-for="item in goodsList" :key="item.id">
       <goods-item :goodsData="item"></goods-item>
-    </template> -->
+    </template>
   </div>
 </template>
 
 <script>
-  // import GoodsItem from './GoodsItem.vue'
+  import GoodsItem from './GoodsItem.vue'
 
   export default ({
     name: 'GoodsList',
     components: {
-      // GoodsItem
+      GoodsItem
     },
 
     props: {
-      goodsData: {
+      goodsList: {
         type: Array,
         default: () => {
           return []
@@ -32,6 +32,8 @@
 
 <style>
   .goods_list {
+    margin-top: 6px;
+
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;

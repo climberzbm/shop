@@ -1,12 +1,13 @@
 <template>
   <div class="goods">
-    <img src="https://oss.shop.eduwork.cn/product/2020-0820-5f3e1871194a5.png">
+    <img :src="goodsData.cover_url">
     <div class="goods_info">
-      <p class="title">标题</p>
+      <p class="title">{{goodsData.title}}</p>
       <div class="price_box">
-        <p class="price">$ 23.00</p>
+        <p class="price">¥ {{goodsData.price}}</p>
         <div class="collect">
           <i class="iconfont icon-shoucang"></i>
+          <span>{{' ' + goodsData.collects_count}}</span>
         </div>
       </div>
     </div>
@@ -22,9 +23,9 @@
 
     props: {
       goodsData: {
-        type: Array,
+        type: Object,
         default: () => {
-          return []
+          return {}
         }
       }
     },
@@ -38,10 +39,15 @@
 <style>
   .goods {
     width: 100%;
+    margin-bottom: 10px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .goods img {
-    width: 100%;
+    width: 80%;
   }
 
   .goods .goods_info {
@@ -53,12 +59,17 @@
   }
 
   .goods_info .title {
+    width: 70%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
     font-size: 16px;
-    margin-bottom: 3px;
+    margin-bottom: 6px;
   }
 
   .goods_info .price_box {
     width: 100%;
+    padding: 0 20px;
 
     display: flex;
     justify-content: space-around;

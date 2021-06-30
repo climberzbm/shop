@@ -14,7 +14,7 @@ export function getHomeAllData() {
  * 获取首页所有数据
  * @param {*} config
  */
-export function getHomeGoods(type = "sales", page = 1) {
+export function getHomeGoods(type = "new", page = 1) {
   return request({
     url: `/api/index?${type}=1&&page=${page}`
   })
